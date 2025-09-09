@@ -869,7 +869,7 @@ opacity:0;
 	width:90%;
 	height: 80vh;
 	/*背景画像設定*/
-	background:url("../img/main.jpg") no-repeat center;
+	background:url("../img/main.webp") no-repeat center;
 	background-size:cover;
 }
 

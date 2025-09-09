@@ -1,3 +1,6 @@
 # web-gallery
 
-Initial repository created by create-repo
+最新のWebデザイントレンドを取り入れた、様々な業種向けのデザインサンプルを掲載しています。
+お好みのデザインをクリックして、詳細をご覧ください。
+
+> 出典: [動くWebデザインアイディア帳](https://coco-factory.jp/ugokuweb/)

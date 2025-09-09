@@ -211,7 +211,7 @@ h2{
 #vision .img{
     width:40%;
     min-height: 590px;
-    background:url("../img/pict_01.jpg") no-repeat center;
+    background:url("../img/pict_01.webp") no-repeat center;
     background-size: cover;
 }
 
@@ -466,7 +466,7 @@ h2{
 .faq-bg{
     position: relative;
     height: 55vh;
-    background:url("../img/pict_05.jpg") no-repeat center;
+    background:url("../img/pict_05.webp") no-repeat center;
     background-size:cover;
     margin: 0 0 200px 25%;
 }

@@ -416,47 +416,47 @@ body.appear #container{
 
 /*左エリア画像設定*/
 #left1{
-	background:url("../img/main-left.jpg") no-repeat center right;
+	background:url("../img/main-left.webp") no-repeat center right;
 	background-size:cover;
 }
 
 #right1{
-	background:url("../img/main-right.jpg") no-repeat center left;
+	background:url("../img/main-right.webp") no-repeat center left;
 	background-size:cover;
 }
 
 #right2{
-	background:url("../img/01.jpg") no-repeat center;
+	background:url("../img/01.webp") no-repeat center;
 	background-size:cover;
 }
 
 #right3{
-	background:url("../img/02.jpg") no-repeat center;
+	background:url("../img/02.webp") no-repeat center;
 	background-size:cover;
 }
 
 #right4{
-	background:url("../img/03.jpg") no-repeat center;
+	background:url("../img/03.webp") no-repeat center;
 	background-size:cover;
 }
 
 #left4{
-	background:url("../img/04.jpg") no-repeat center;
+	background:url("../img/04.webp") no-repeat center;
 	background-size:cover;
 }
 
 #right5{
-	background:url("../img/05.jpg") no-repeat center;
+	background:url("../img/05.webp") no-repeat center;
 	background-size:cover;
 }
 
 #left5{
-	background:url("../img/06.jpg") no-repeat center;
+	background:url("../img/06.webp") no-repeat center;
 	background-size:cover;
 }
 
 #right6{
-	background:url("../img/07.jpg") no-repeat center;
+	background:url("../img/07.webp") no-repeat center;
 	background-size:cover;
 }
 
@@ -492,48 +492,48 @@ body.appear #container{
 /*右エリア上部画像設定*/
     
 #left1{
-    background:url("../img/main-right.jpg") center;
+    background:url("../img/main-right.webp") center;
     background-size:cover;
 }
 
 #left2 .sp-top{
-	background:url("../img/01.jpg") no-repeat center;
+	background:url("../img/01.webp") no-repeat center;
 	background-size:cover;
     height: 50vh;
 }
 
 #left3 .sp-top{
-	background:url("../img/02.jpg") no-repeat top center;
+	background:url("../img/02.webp") no-repeat top center;
 	background-size:cover;
     height: 50vh;
 }
     
 #left4 .sp-top{
-	background:url("../img/03.jpg") no-repeat top center;
+	background:url("../img/03.webp") no-repeat top center;
 	background-size:cover;
     height: 50vh;
 }
     
 #left4 .sp-bottom{
-	background:url("../img/04.jpg") no-repeat top center;
+	background:url("../img/04.webp") no-repeat top center;
 	background-size:cover;
     height: 50vh;
 }
 
 #left5 .sp-top{
-	background:url("../img/05.jpg") no-repeat top center;
+	background:url("../img/05.webp") no-repeat top center;
 	background-size:cover;
     height: 50vh;
 }
     
 #left5 .sp-bottom{
-	background:url("../img/07.jpg") no-repeat center;
+	background:url("../img/07.webp") no-repeat center;
 	background-size:cover;
     height: 50vh;
 }
 
 #left6{
-	background:url("../img/06.jpg") no-repeat center;
+	background:url("../img/06.webp") no-repeat center;
 	background-size:cover;
 }
 

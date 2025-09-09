@@ -88,15 +88,15 @@ $('#page-top').click(function () {
 var windowwidth = window.innerWidth || document.documentElement.clientWidth || 0;
 		if (windowwidth > 768){
 			var responsiveImage = [//PC用の画像
-				{ src: './img/main_01.jpg'},
-				{ src: './img/main_02.jpg'},
-				{ src: './img/main_03.jpg'}
+				{ src: './img/main_01.webp'},
+				{ src: './img/main_02.webp'},
+				{ src: './img/main_03.webp'}
 			];
 		} else {
 			var responsiveImage = [//タブレットサイズ（768px）以下用の画像
-				{ src: './img/main_sp01.jpg' },
-				{ src: './img/main_sp02.jpg' },
-				{ src: './img/main_sp03.jpg' }
+				{ src: './img/main_sp01.webp' },
+				{ src: './img/main_sp02.webp' },
+				{ src: './img/main_sp03.webp' }
 			];
 		}
 

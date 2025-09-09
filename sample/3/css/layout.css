@@ -509,7 +509,7 @@ h2 span{
 /* concept */
 
 #concept{
-    background: url("../img/flag_01.png") no-repeat left top,url("../img/flag_02.png") no-repeat right top;
+    background: url("../img/flag_01.webp") no-repeat left top,url("../img/flag_02.webp") no-repeat right top;
     background-size:250px auto;
 }
 
@@ -925,17 +925,17 @@ h2 span{
 }
 
 .course-list section:nth-of-type(1) .course-img{
-    background:url("../img/course_01.png") no-repeat center;
+    background:url("../img/course_01.webp") no-repeat center;
     background-size: cover;
 }
 
 .course-list section:nth-of-type(2) .course-img{
-     background:url("../img/course_02.png") no-repeat center;
+     background:url("../img/course_02.webp") no-repeat center;
     background-size: cover;
 }
 
 .course-list section:nth-of-type(3) .course-img{
-     background:url("../img/course_03.png") no-repeat center;
+     background:url("../img/course_03.webp") no-repeat center;
     background-size: cover;
 }
 
@@ -956,7 +956,7 @@ h2 span{
 /* gallery */
 
 .img-gallery{
-    background:url("../img/border.png") repeat-x top left,url("../img/border.png") repeat-x bottom left;
+    background:url("../img/border.webp") repeat-x top left,url("../img/border.webp") repeat-x bottom left;
     background-size: 50px 16px;
     padding:50px 0;
     margin: 0 0 100px 0;
@@ -970,7 +970,7 @@ h2 span{
 /* contact */
 
 #contact{
-    background:url("../img/bg_footer.jpg") no-repeat center;
+    background:url("../img/bg_footer.webp") no-repeat center;
     background-size: cover;
     color: #fff;
     display: flex;

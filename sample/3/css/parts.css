@@ -573,15 +573,15 @@ opacity: 1;
 /*　背景画像設定　*/
 
 .slider-item01 {
-    background:url(../img/main_01.png);
+    background:url(../img/main_01.webp);
 }
 
 .slider-item02 {
-    background:url(../img/main_02.png);
+    background:url(../img/main_02.webp);
 }
 
 .slider-item03 {
-    background:url(../img/main_03.png);
+    background:url(../img/main_03.webp);
 }
 
 .slider-item {

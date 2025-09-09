@@ -82,7 +82,7 @@ html{
 
 /* header */
 #header{
-    background:url("../img/bg_header.png") no-repeat top center;
+    background:url("../img/bg_header.webp") no-repeat top center;
     background-size: contain;
 }
 
@@ -190,7 +190,7 @@ html{
 .modaal-container h2 span,
 #ranking h2 span,
 #newitems h2 span{
-    background: url(../img/bg_header_01.png) no-repeat left, url(../img/bg_header_02.png) no-repeat right;
+    background: url(../img/bg_header_01.webp) no-repeat left, url(../img/bg_header_02.webp) no-repeat right;
     background-size: 35px 35px;
     padding: 10px 60px;
     white-space: nowrap;
@@ -200,7 +200,7 @@ html{
 
 .flower1{
     position: absolute;
-    background:url("../img/bg_flower.png") no-repeat;
+    background:url("../img/bg_flower.webp") no-repeat;
     background-size:contain;
     width:140px;
     height: 140px;
@@ -213,7 +213,7 @@ html{
 
 .flower2{
     position: absolute;
-    background:url("../img/bg_flower.png") no-repeat;
+    background:url("../img/bg_flower.webp") no-repeat;
     background-size:contain;
     width:100px;
     height: 100px;
@@ -269,7 +269,7 @@ html{
 
 .flower3{
     position: absolute;
-    background:url("../img/bg_flower01.png") no-repeat;
+    background:url("../img/bg_flower01.webp") no-repeat;
     background-size:contain;
     width:80px;
     height: 80px;
@@ -280,7 +280,7 @@ html{
 
 .flower4{
     position: absolute;
-    background:url("../img/bg_flower02.png") no-repeat;
+    background:url("../img/bg_flower02.webp") no-repeat;
     background-size:contain;
     width:80px;
     height:80px;
@@ -291,7 +291,7 @@ html{
 
 .flower5{
     position: absolute;
-    background:url("../img/bg_flower03.png") no-repeat;
+    background:url("../img/bg_flower03.webp") no-repeat;
     background-size:contain;
     width:100px;
     height:100px;
@@ -302,7 +302,7 @@ html{
 
 .flower6{
     position: absolute;
-    background:url("../img/bg_flower04.png") no-repeat;
+    background:url("../img/bg_flower04.webp") no-repeat;
     background-size:contain;
     width:80px;
     height:80px;
@@ -313,7 +313,7 @@ html{
 
 .flower7{
     position: absolute;
-    background:url("../img/bg_flower05.png") no-repeat;
+    background:url("../img/bg_flower05.webp") no-repeat;
     background-size:contain;
     width:100px;
     height:100px;
@@ -324,7 +324,7 @@ html{
 
 .flower8{
     position: absolute;
-    background:url("../img/bg_flower.png") no-repeat;
+    background:url("../img/bg_flower.webp") no-repeat;
     background-size:contain;
     width:85px;
     height:85px;
@@ -520,7 +520,7 @@ span.detail-price{
 
 #footer{
     padding:400px 70px 0 70px;
-    background:url("../img/bg_footer.png") no-repeat center top;
+    background:url("../img/bg_footer.webp") no-repeat center top;
     background-size: contain;
 }
 
