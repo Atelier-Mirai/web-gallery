@@ -1,0 +1,76 @@
+/*=====================================================================
+  沿革
+=====================================================================*/
+#history {
+  background-color: var(--kinari);
+}
+
+.history-area {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  max-inline-size: 1000px;
+  margin-inline: auto;
+  align-items: center;
+  
+  @media (width <= 768px) {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}
+
+.history-image {
+  background: url("../images/history.webp") no-repeat center / cover;
+  min-block-size: 350px;
+  
+  @media (width <= 768px) {
+    min-block-size: 250px;
+    order: 2;
+  }
+}
+
+.history-content {
+  @media (width <= 768px) {
+    order: 1;
+  }
+}
+
+.timeline {
+  position: relative;
+  padding-inline-start: 30px;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    inset-block: 0;
+    inset-inline-start: 0;
+    inline-size: 2px;
+    background-color: var(--kincha);
+  }
+  
+  & li {
+    position: relative;
+    padding-block-end: 30px;
+    
+    &::before {
+      content: "";
+      position: absolute;
+      inset-block-start: 5px;
+      inset-inline-start: -34px;
+      inline-size: 10px;
+      block-size: 10px;
+      background-color: var(--kincha);
+      border-radius: 50%;
+    }
+  }
+  
+  & dt {
+    font-weight: bold;
+    color: var(--ai);
+    margin-block-end: 5px;
+  }
+  
+  & dd {
+    color: var(--hai);
+  }
+}

@@ -2,177 +2,83 @@
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <title>1-9 堅実的な企業サイト</title>
-  <meta name="description" content="書籍「動くWebデザインアイディア帳」のサンプルサイトです">
-  <meta name="robots" content="noindex,nofollow">
-  <meta name="keywords" content="">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <!--=============Google Font ===============-->
-  <link href="https://fonts.googleapis.com/css?family=Alex+Brush%7CNoto+Serif+JP&display=swap" rel="stylesheet">
-  <!--==============レイアウトを制御する独自のCSSを読み込み===============-->
-  <!--機能編 6-1-3 ゆっくりズームアウトさせながら全画面で見せる-->
-  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.css">
-  <!--自作のCSS-->
-  <link rel="stylesheet" type="text/css" href="css/reset.css">
-  <link rel="stylesheet" type="text/css" href="css/parts.css">
-  <link rel="stylesheet" type="text/css" href="css/layout.css"> </head>
+  <title>Seaside - Music Artist</title>
+  <meta name="description" content="アーティスト Seaside の公式サイト">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="stylesheets/master.css">
+  <script src="javascripts/main.js" defer></script>
+</head>
+
 <body>
+  <!-- ローディング画面（SVG描画アニメーション） -->
   <div id="splash">
-    <div id="splash-logo">
-      <div class="fadeUp">杉山株式会社</div>
+    <div class="splash-logo">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 739 258.9">
+        <image href="svg/text.svg" width="739" height="258.9" mask="url(#clipmask)"></image>
+        <mask id="clipmask" maskUnits="objectBoundingBox">
+          <path d="M124.9,73.4c0,0,57.3-46.5,22.9-66.6c-35.2-20.7-87,8.9-90.1,55.4c-3.1,46.6,48.4,84.2,34.7,130.7
+          s-59.6,47.3-79.7,39.8c-20.1-7.4-14.9-75.1,5.8-79.5l147.1,10.8c0,0,39.2-11.3,38.4-31.1c-0.8-19.8-4.4-35.8-13-35.7
+          c-25.3,0.3-45.7,63.3-51.4,95.7c-6,34.8,3,35.9,22.5,29c19.5-6.9,102.7-186.4,133.4-79.5c-20-19.8-51.6-34.7-59.9-0.3
+          c-8.3,34.4-33.7,68.2-6,68s87-105.9,85.5-98C299.1,153.4,265.3,228,298,221.9c32.7-6.1,74.4-118.2,74.4-118.2
+          c4.2,56.7,21.2,122.4,0,133.3c-21.2,10.9-51.2,37.6-47.6,9.6c3.6-27.9,126.1-113.8,131.5-118.6c-16.2,48.5-21.8,70.8-0.3,64.9
+          s46.7-83.1,69.7-71.6c22.9,11.5,27.1,16.3,27.1,16.3s-70.8,32-62.3,72.6s143.6-109.4,151.2-147c7.6-37.7,17.8-50.1-10.8-50.1
+          c-34.5,0-107.4,268.4-65.2,224c41.9-44.1,140.1-100.1,141.2-124.8c1.1-24.7-11.1-15-25.2-8.5c-14.1,6.5-48.7,31.3-42.3,62.8
+          s2.8,66.1,26,55.4s73.6-79.8,73.6-79.8"/>
+          <line x1="490.5" y1="50.6" x2="459.9" y2="103.6"/>
+        </mask>
+      </svg>
     </div>
-    <!--/splash-->
   </div>
-  <div class="splashbg1"></div>
-  <div class="splashbg2"></div>
-  <!---画面遷移用-->
+  <div class="splash-bg"></div>
+
   <div id="container">
-    <header id="header" class="DownMove">
-      <div class="openbtn"><span></span><span></span><span></span></div>
-      <nav id="g-nav">
-        <div id="g-nav-list">
-          <ul class="nav05b">
-            <li class="current"><a href="#"><span>ホーム</span></a></li>
-            <li><a href="#"><span>会社概要</span></a></li>
-            <li><a href="#"><span>事業紹介</span></a></li>
-            <li><a href="#"><span>求人情報</span></a></li>
-            <li><a href="#"><span>お知らせ</span></a></li>
-            <li><a href="#"><span>アクセス</span></a></li>
-          </ul>
-        </div>
-      </nav>
-      <h1>杉山株式会社</h1>
-      <ul id="utility-navi">
-        <li><a href="#"><img src="img/map.svg" alt="" loading="lazy"><span>アクセス</span></a></li>
-        <li><a href="#"><img src="img/contact.svg" alt="" loading="lazy"><span>お問い合わせ</span></a></li>
-      </ul>
-    </header>
-    <div class="circle-bg"></div>
-    <main id="main-area">
-      <div id="lead">
-        <div id="slider-area">
-          <div id="slider">
-            <!--/slider-->
-          </div>
-          <!--/slider-area-->
-        </div>
-        <h2 class="heading fadeRightTrigger">Concept</h2>
-        <p class="lead fadeRightTrigger">最適な人材を<span>ご提案致します</span></p>
-        <article id="news" class="fadeLeftTrigger">
-          <h2>お知らせ</h2>
-          <ul>
-            <li><a href="#"><time datetime="2025-12-23">2025.12.23</time>年始年末のお取引について</a></li>
-            <li><a href="#"><time datetime="2025-04-15">2025.04.15</time>ゴールデンウィークの営業について</a></li>
-          </ul>
-        </article>
-        <!--/main-lead-->
-      </div>
-      <section id="service">
-        <header class="fadeLeftTrigger">
-          <h2>事業紹介</h2>
-          <p>株式会社杉山は「社会をより良く」を<br>コンセプトに人と仕事をつなげます</p>
-        </header>
-        <div class="service-area fadeUpTrigger">
-          <ul class="randomScroll">
-            <li><a href="#" class="btnlinestretches">人材派遣</a></li>
-            <li><a href="#" class="btnlinestretches">業務委託</a></li>
-            <li><a href="#" class="btnlinestretches">アルバイト</a></li>
-            <li><a href="#" class="btnlinestretches">警備</a></li>
-            <li><a href="#" class="btnlinestretches">求人広告</a></li>
-            <li><a href="#" class="btnlinestretches">シニア派遣</a></li>
-            <li><a href="#" class="btnlinestretches">ドライバー派遣</a></li>
-            <li><a href="#" class="btnlinestretches">社員教育</a></li>
-          </ul>
-        </div>
-      </section>
-      <section id="message">
-        <h2 class="heading fadeLeftTrigger">Message</h2>
-        <div class="message-area">
-          <div class="message-img fadeRightTrigger"></div>
-          <section class="message-content fadeLeftTrigger">
-            <div class="message-box">
-              <h3>万全の教育体制で<br>エキスパートを派遣</h3>
-              <p>杉山株式会社は、<br>万全の教育体制で派遣社員の皆様を<br>サポートし、人材を必要としている<br>企業様にエキスパートを送り出します。<br>どうぞお気軽にご相談ください。</p>
-              <div class="message-btn"><a href="#" class="btn bgcenterx"><span>会社概要</span></a></div>
-            </div>
-          </section>
-          <!--/message-area-->
-        </div>
-      </section>
-      <section id="history">
-        <h2 class="heading fadeRightTrigger">History</h2>
-        <div class="history-area">
-          <div class="history-img fadeLeftTrigger"></div>
-          <div class="history-content fadeRightTrigger">
-            <ul class="timeline">
-              <li>
-                <dl> <dt>1980年</dt>
-                  <dd>銀座9丁目で創業</dd>
-                </dl> <span class="border-line"></span> </li>
-              <li>
-                <dl> <dt>1990年</dt>
-                  <dd>プライバシーマーク取得</dd>
-                </dl> <span class="border-line"></span> </li>
-              <li>
-                <dl> <dt>2001年</dt>
-                  <dd>BEST CONNECT AWARD2001 受賞</dd>
-                </dl> <span class="border-line"></span> </li>
-              <li>
-                <dl> <dt>2016年</dt>
-                  <dd>東京証券取引所マザーズに上場</dd>
-                </dl> <span class="border-line"></span> </li>
-            </ul>
-          </div>
-          <!--/history-area-->
-        </div>
-      </section>
-    </main>
-    <div id="footer">
-      <div class="footer-r">
-        <section class="map-area">
-          <h2>交通アクセス</h2>
-          <div class="map-address">
-            <div class="map-address-area"> <address>〒104-0061<br>東京都中央区銀座5丁目1-1</address> <a href="#" target="_blank" class="btn bgcenterout"><span>Google Map</span></a> </div>
-          </div>
-          <div class="map-block">
-            <div class="iframe-area"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3241.1872337842015!2d139.75989081525861!3d35.6723914801963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188bef7abe6d7f%3A0x7c12dce58bb5263f!2z44CSMTA0LTAwNjEg5p2x5Lqs6YO95Lit5aSu5Yy66YqA5bqn77yV5LiB55uu77yR4oiS77yR!5e0!3m2!1sja!2sjp!4v1577446697807!5m2!1sja!2sjp" width="600" height="450" frameborder="0" allowfullscreen=""></iframe> </div>
-          </div>
-        </section>
-        <ul class="footer-link">
-          <li><a href="#">ホーム</a></li>
-          <li><a href="#">会社概要</a></li>
-          <li><a href="#">事業紹介</a></li>
-          <li><a href="#">求人情報</a></li>
-          <li><a href="#">お知らせ</a></li>
-          <li><a href="#">アクセス</a></li>
-          <li><a href="#">お問い合わせ</a></li>
+    <!-- ヘッダー -->
+    <header id="header">
+      <h1 class="fade-down"><a href="#"><img src="svg/text-white.svg" alt="Seaside"></a></h1>
+      <button class="menu-toggle fade-down" aria-label="メニュー">
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="global-nav">
+        <ul class="nav-list">
+          <li class="current"><a href="#">Home</a></li>
+          <li><a href="#">Profile</a></li>
+          <li><a href="#">Sounds</a></li>
+          <li><a href="#">Contact</a></li>
         </ul>
-        <!--/footer-r-->
-      </div>
-      <div class="footer-l">
-        <section class="footer-contact">
-          <div class="footer-contact-area">
-            <h2>杉山株式会社</h2> <a href="tel:03-1234-5678">03-1234-5678</a>
-            <p>電話受付：平日9時〜17時</p>
-            <!--/footer-contact-area-->
-          </div>
-        </section>
-        <footer id="copyright"> <small>&copy; Sugiyama Co.</small> </footer>
-        <!--/footer-l-->
-      </div>
-      <div id="page-top"><a href="#"><span></span></a></div>
-      <!--/footer-->
+      </nav>
+      <div class="circle-bg"></div>
+    </header>
+
+    <!-- ヒーロータイトル -->
+    <p class="hero-title slide-in"><span>Music Man</span></p>
+
+    <!-- 背景動画 -->
+    <div id="video-area">
+      <video id="video" poster="images/video-poster.webp" playsinline muted autoplay loop>
+        <source src="video/movie.mp4" type="video/mp4">
+        <source src="video/movie.ogv" type="video/ogv">
+        <source src="video/movie.webm" type="video/webm">
+        <p>動画を再生できる環境ではありません。</p>
+      </video>
     </div>
-    <!--/container-->
+
+    <!-- 再生ボタン -->
+    <button class="play-button" aria-label="PVを再生"></button>
   </div>
-  <!--=============JS ===============-->
-  <!--jQuery-->
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <!--機能編 8-1-9 スクロールの速さが変化-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-  <!--機能編 6-1-3 ゆっくりズームアウトさせながら全画面で見せる-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/vegas/2.4.4/vegas.min.js"></script>
-  <!--自作のJS-->
-  <script src="js/script.js"></script>
+
+  <!-- 動画モーダル -->
+  <div id="video-modal" class="modal-overlay">
+    <div class="modal-content">
+      <button class="modal-close" aria-label="閉じる"></button>
+      <video poster="images/video-poster.webp" playsinline controls>
+        <source src="video/movie.mp4" type="video/mp4">
+        <source src="video/movie.ogv" type="video/ogv">
+        <source src="video/movie.webm" type="video/webm">
+        <p>動画を再生できる環境ではありません。</p>
+      </video>
+      <p>Music Man PV ※音は再生しません</p>
+    </div>
+  </div>
 </body>
 </html>

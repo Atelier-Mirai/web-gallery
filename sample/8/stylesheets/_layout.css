@@ -1,0 +1,19 @@
+/*=====================================================================
+  レイアウト
+=====================================================================*/
+#container {
+  position: relative;
+}
+
+.circle-bg {
+  position: fixed;
+  z-index: 0;
+  inset-block-start: 50%;
+  inset-inline-start: -200px;
+  inline-size: 600px;
+  block-size: 600px;
+  background-color: var(--ai-10);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+}

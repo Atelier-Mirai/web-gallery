@@ -1,0 +1,64 @@
+/*=====================================================================
+  ローディング画面
+=====================================================================*/
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  background-color: var(--ai);
+}
+
+.splash-logo {
+  font-size: 1.5rem;
+  color: var(--shiro);
+  letter-spacing: 0.2em;
+}
+
+.splash-bg-1,
+.splash-bg-2 {
+  display: none;
+}
+
+body.appear .splash-bg-1,
+body.appear .splash-bg-2 {
+  display: block;
+  position: fixed;
+  z-index: 9998;
+  inset-inline: 0;
+  block-size: 50%;
+  background-color: var(--ai);
+}
+
+body.appear .splash-bg-1 {
+  inset-block-start: 0;
+  transform-origin: top;
+  animation: splash-slide-up 0.6s 0.3s forwards;
+}
+
+body.appear .splash-bg-2 {
+  inset-block-end: 0;
+  transform-origin: bottom;
+  animation: splash-slide-down 0.6s 0.3s forwards;
+}
+
+@keyframes splash-slide-up {
+  to { transform: translateY(-100%); }
+}
+
+@keyframes splash-slide-down {
+  to { transform: translateY(100%); }
+}
+
+#container {
+  opacity: 0;
+}
+
+body.appear #container {
+  animation: fade-in 0.5s 0.5s forwards;
+}
+
+@keyframes fade-in {
+  to { opacity: 1; }
+}

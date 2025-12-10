@@ -1,0 +1,17 @@
+/*=====================================================================
+  レイアウト
+=====================================================================*/
+#container {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  min-block-size: 100vh;
+  min-block-size: 100dvh;
+  
+  @media (width <= 960px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+#content-area {
+  position: relative;
+}

@@ -1,0 +1,45 @@
+/*=====================================================================
+  ベーススタイル
+=====================================================================*/
+body {
+  font-family: 'Noto Serif JP', serif;
+  color: var(--sumi);
+  font-size: 1rem;
+  line-height: 1.9;
+  background-color: var(--kinari);
+}
+
+a {
+  color: var(--ai);
+  text-decoration: none;
+}
+
+img {
+  max-inline-size: 100%;
+  block-size: auto;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h2.heading {
+  font-family: 'Alex Brush', cursive;
+  font-size: 3rem;
+  color: var(--kincha);
+  margin-block-end: 30px;
+  
+  @media (width <= 768px) {
+    font-size: 2rem;
+  }
+}
+
+section {
+  padding: 80px 20px;
+  
+  @media (width <= 768px) {
+    padding: 50px 20px;
+  }
+}

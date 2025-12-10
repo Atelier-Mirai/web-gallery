@@ -1,0 +1,113 @@
+/*=====================================================================
+  ナビゲーション
+=====================================================================*/
+.menu-toggle {
+  position: fixed;
+  z-index: 9999;
+  inset-block-start: 20px;
+  inset-inline-end: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  padding: 15px;
+  background-color: var(--gofun);
+  border: none;
+  cursor: pointer;
+  
+  & span {
+    display: block;
+    inline-size: 25px;
+    block-size: 2px;
+    background-color: var(--sumi);
+    transition: all 0.3s;
+    
+    &:nth-of-type(2) {
+      font-size: 0.7rem;
+      inline-size: auto;
+      block-size: auto;
+      background: none;
+    }
+  }
+  
+  &.is-active span {
+    &:nth-of-type(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+    &:nth-of-type(2) {
+      opacity: 0;
+    }
+    &:nth-of-type(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+  }
+}
+
+#main-nav {
+  position: fixed;
+  z-index: 998;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  background-color: var(--gofun-90);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.nav-content {
+  text-align: center;
+}
+
+.nav-list {
+  margin-block-end: 40px;
+  
+  & li {
+    margin-block-end: 20px;
+  }
+  
+  & a {
+    font-size: 1.3rem;
+    letter-spacing: 0.2em;
+  }
+  
+  & .current a {
+    color: var(--beniaka);
+  }
+}
+
+.nav-contact {
+  & dt {
+    font-size: 0.9rem;
+    margin-block-end: 10px;
+    color: var(--hai);
+  }
+  
+  & dd a {
+    font-size: 1.5rem;
+  }
+}
+
+.circle-bg {
+  position: fixed;
+  z-index: -1;
+  inset-block-start: 50%;
+  inset-inline-end: 0;
+  inline-size: 0;
+  block-size: 0;
+  background-color: var(--kinari);
+  border-radius: 50%;
+  transform: translateY(-50%);
+  transition: all 0.5s;
+  
+  #main-nav.is-active & {
+    inline-size: 200vmax;
+    block-size: 200vmax;
+    inset-inline-end: -100vmax;
+  }
+}

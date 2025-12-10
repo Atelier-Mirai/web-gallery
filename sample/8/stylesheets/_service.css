@@ -1,0 +1,51 @@
+/*=====================================================================
+  事業紹介
+=====================================================================*/
+#service {
+  text-align: center;
+  
+  & header {
+    margin-block-end: 50px;
+    
+    & h2 {
+      font-size: 1.5rem;
+      color: var(--ai);
+      margin-block-end: 15px;
+    }
+    
+    & p {
+      color: var(--hai);
+    }
+  }
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  max-inline-size: 1000px;
+  margin-inline: auto;
+  
+  @media (width <= 768px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  @media (width <= 480px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.service-item {
+  & a {
+    display: block;
+    padding: 20px;
+    background-color: var(--shiro);
+    border: 1px solid var(--ai-10);
+    transition: all 0.3s;
+    
+    &:hover {
+      background-color: var(--ai);
+      color: var(--shiro);
+    }
+  }
+}

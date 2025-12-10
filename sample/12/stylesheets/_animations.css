@@ -1,0 +1,55 @@
+/*=====================================================================
+  アニメーション
+=====================================================================*/
+/* ブラーイン */
+.blur-in {
+  opacity: 0;
+  filter: blur(10px);
+  transition: all 1s;
+  
+  &.is-visible {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* ラインイン（画像表示） */
+.line-reveal {
+  position: relative;
+  overflow: hidden;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--kuriiro);
+    transform: scaleX(1);
+    transform-origin: right;
+    transition: transform 0.8s 0.3s;
+    z-index: 1;
+  }
+  
+  &.is-visible::before {
+    transform: scaleX(0);
+  }
+  
+  & img {
+    transform: scale(1.2);
+    transition: transform 0.8s 0.5s;
+  }
+  
+  &.is-visible img {
+    transform: scale(1);
+  }
+}
+
+/* SVGアニメーション */
+.svg-animate path {
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  transition: stroke-dashoffset 2s ease;
+}
+
+.svg-animate.is-visible path {
+  stroke-dashoffset: 0;
+}

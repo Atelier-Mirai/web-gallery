@@ -1,0 +1,44 @@
+/*=====================================================================
+  アニメーション
+=====================================================================*/
+.fade-up {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s;
+  
+  &.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-left {
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.8s;
+  
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.fade-right {
+  opacity: 0;
+  transform: translateX(30px);
+  transition: all 0.8s;
+  
+  &.is-visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.down-move {
+  transform: translateY(-100%);
+  transition: transform 0.5s;
+  
+  &.is-visible {
+    transform: translateY(0);
+  }
+}

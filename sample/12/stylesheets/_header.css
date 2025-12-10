@@ -1,0 +1,85 @@
+/*=====================================================================
+  ヘッダー（サイドバー）
+=====================================================================*/
+#header {
+  position: fixed;
+  z-index: 100;
+  inset-block: 0;
+  inset-inline-start: 0;
+  inline-size: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 30px;
+  background-color: var(--gofun-90);
+  text-align: center;
+  
+  @media (width <= 960px) {
+    position: static;
+    inline-size: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+  }
+}
+
+.header-content {
+  & h1 {
+    font-size: 1.3rem;
+    margin-block-end: 15px;
+    letter-spacing: 0.1em;
+    
+    & span {
+      display: block;
+      font-size: 2rem;
+      color: var(--kuriiro);
+    }
+  }
+  
+  & p {
+    font-size: 0.85rem;
+    color: var(--hai);
+    line-height: 1.8;
+  }
+  
+  @media (width <= 960px) {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    
+    & h1 {
+      margin: 0;
+      font-size: 1rem;
+      
+      & span {
+        font-size: 1.3rem;
+      }
+    }
+    
+    & p {
+      display: none;
+    }
+  }
+}
+
+.sns-links {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-block-start: 30px;
+  
+  & img {
+    inline-size: 24px;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+    
+    &:hover {
+      opacity: 1;
+    }
+  }
+  
+  @media (width <= 960px) {
+    margin: 0;
+  }
+}

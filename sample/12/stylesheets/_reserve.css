@@ -1,0 +1,47 @@
+/*=====================================================================
+  ご予約セクション
+=====================================================================*/
+#reserve {
+  position: relative;
+  background: url("../images/flower.webp") no-repeat center / cover;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--kuro-70);
+  }
+}
+
+.reserve-area {
+  position: relative;
+  z-index: 1;
+  padding: 100px 20px;
+  text-align: center;
+  color: var(--gofun);
+  
+  & h2 {
+    font-size: 1.5rem;
+    margin-block-end: 30px;
+    letter-spacing: 0.2em;
+  }
+  
+  & .tel {
+    font-size: 2.5rem;
+    margin-block-end: 20px;
+    
+    & a {
+      color: var(--gofun);
+      letter-spacing: 0.1em;
+    }
+    
+    @media (width <= 480px) {
+      font-size: 1.8rem;
+    }
+  }
+  
+  & p {
+    font-size: 0.9rem;
+    opacity: 0.8;
+  }
+}

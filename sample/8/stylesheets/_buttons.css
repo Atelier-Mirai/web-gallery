@@ -1,0 +1,40 @@
+/*=====================================================================
+  ボタン
+=====================================================================*/
+.btn-fill {
+  display: inline-block;
+  padding: 15px 40px;
+  background-color: var(--ai);
+  color: var(--shiro);
+  position: relative;
+  overflow: hidden;
+  transition: color 0.3s;
+  
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: var(--kincha);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+    z-index: -1;
+  }
+  
+  &:hover::before {
+    transform: scaleX(1);
+  }
+}
+
+.btn-outline {
+  display: inline-block;
+  padding: 12px 30px;
+  border: 1px solid var(--shiro);
+  color: var(--shiro);
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  
+  &:hover {
+    background-color: var(--shiro);
+    color: var(--ai);
+  }
+}
