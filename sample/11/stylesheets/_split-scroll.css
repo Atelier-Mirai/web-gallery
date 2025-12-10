@@ -58,7 +58,22 @@
 }
 
 .section-left-6 {
-  background-color: var(--usuzumi);
+  /* Contact セクション: 背景色を時間とともに変化させる */
+  background-color: #daca0b;
+  animation: contact-bg-change 40s linear infinite;
+}
+
+@keyframes contact-bg-change {
+  0%   { background-color: #daca0b; }
+  20%  { background-color: #8bda0b; }
+  30%  { background-color: #18da0b; }
+  40%  { background-color: #0bdaaa; }
+  50%  { background-color: #0ba1da; }
+  60%  { background-color: #0b38da; }
+  70%  { background-color: #810bda; }
+  80%  { background-color: #da0b9a; }
+  90%  { background-color: #da0b4e; }
+  100% { background-color: #da6a0b; }
 }
 
 /* 右側セクション */
@@ -83,7 +98,40 @@
 }
 
 .section-right-6 {
-  background-color: var(--sumi);
+  /* Scroll セクション: 空間的なグラデーション＋時間変化 */
+  background-image:
+    radial-gradient(circle at 20% 0%, rgba(255, 255, 255, 0.25), transparent 55%),
+    radial-gradient(circle at 80% 100%, rgba(255, 255, 255, 0.18), transparent 60%),
+    linear-gradient(120deg,
+      #0b38da,
+      #0ba1da,
+      #0bdaaa,
+      #18da0b,
+      #daca0b,
+      #da0b4e,
+      #810bda
+    );
+  background-size: 160% 160%, 200% 200%, 400% 400%;
+  background-blend-mode: screen;
+  animation: right-scroll-bg 32s ease-in-out infinite alternate;
+}
+
+@keyframes right-scroll-bg {
+  0% {
+    background-position: 0% 0%, 100% 100%, 0% 50%;
+  }
+  25% {
+    background-position: 30% 10%, 80% 60%, 50% 0%;
+  }
+  50% {
+    background-position: 60% 50%, 40% 40%, 100% 50%;
+  }
+  75% {
+    background-position: 80% 80%, 20% 30%, 50% 100%;
+  }
+  100% {
+    background-position: 100% 100%, 0% 0%, 0% 50%;
+  }
 }
 
 /* セクションコンテンツ */
@@ -152,17 +200,19 @@
 
 /* コンタクト */
 .contact-content {
+  position: relative;
+  z-index: 1;
   text-align: center;
-  
-  h2 {
-    font-size: 2rem;
-    margin-block-end: 20px;
-  }
-  
-  p {
-    margin-block-end: 30px;
-    font-size: 1.2rem;
-  }
+}
+
+#contact-wave {
+  position: absolute;
+  inset-inline: 0;
+  inset-block-start: 50%;
+  inline-size: 100%;
+  block-size: 160px;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .social-links {

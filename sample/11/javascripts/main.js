@@ -79,9 +79,65 @@
     })
   }
 
+  /* Contact セクション用の波線アニメーション */
+  const initContactWave = () => {
+    const canvas = document.getElementById('contact-wave')
+    if (!canvas || !canvas.getContext) return
+
+    const ctx = canvas.getContext('2d')
+    const unit = 80
+    let seconds = 0
+
+    const resize = () => {
+      const rect = canvas.getBoundingClientRect()
+      canvas.width = rect.width
+      canvas.height = rect.height
+    }
+
+    resize()
+    window.addEventListener('resize', resize)
+
+    const drawWave = (color, alpha, zoom, delay) => {
+      ctx.strokeStyle = color
+      ctx.lineWidth = 1
+      ctx.globalAlpha = alpha
+      ctx.beginPath()
+
+      const xAxis = Math.floor(canvas.height / 2)
+      const yAxis = 0
+
+      let x = seconds
+      let y = Math.sin(x) / zoom
+      ctx.moveTo(yAxis, unit * y + xAxis)
+
+      for (let i = yAxis; i <= canvas.width + 10; i += 10) {
+        x = seconds + (-yAxis + i) / unit / zoom
+        y = Math.sin(x - delay) / 3
+        ctx.lineTo(i, unit * y + xAxis)
+      }
+
+      ctx.stroke()
+    }
+
+    const render = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      // 複数の波を重ねて描画（色と位相を少しずつ変える）
+      drawWave('#ffffff', 0.5, 3, 0)
+      drawWave('#ffffff', 0.8, 4, 0.5)
+      drawWave('#ffffff', 0.4, 2, 1.0)
+
+      seconds += 0.014
+      requestAnimationFrame(render)
+    }
+
+    render()
+  }
+
   /* 初期化 */
   window.addEventListener('load', () => {
     initSplash()
     initParticles()
+    initContactWave()
   })
 })()
