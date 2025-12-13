@@ -34,12 +34,12 @@ h1, h2, h3 {
   text-align: center;
   margin-block-end: 50px;
   
-  & .en {
+  .en {
     font-size: 2.5rem;
     letter-spacing: 0.1em;
   }
   
-  & .jp {
+  .jp {
     display: block;
     font-size: 0.9rem;
     color: var(--ai);

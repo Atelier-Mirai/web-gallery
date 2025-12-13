@@ -7,7 +7,7 @@
   inset-inline-end: 20px;
   inset-block-end: 20px;
   
-  & a {
+  a {
     display: grid;
     place-items: center;
     inline-size: 60px;

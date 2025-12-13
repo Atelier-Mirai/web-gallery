@@ -16,7 +16,7 @@
   color: var(--ai);
   letter-spacing: 0.3em;
   
-  & span {
+  span {
     display: inline-block;
     opacity: 0;
     animation: letter-appear 0.5s forwards;

@@ -19,7 +19,7 @@
   max-inline-size: 90vw;
   max-block-size: 90vh;
   
-  & img {
+  img {
     max-inline-size: 100%;
     max-block-size: 85vh;
     object-fit: contain;

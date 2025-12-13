@@ -1,45 +1,43 @@
-/*=====================================================================
-  ベーススタイル
-=====================================================================*/
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Noto Serif JP', serif;
-  color: var(--sumi);
+  font-family: var(--font-sans);
   font-size: 1rem;
-  line-height: 1.9;
-  background-color: var(--kinari);
+  line-height: 1.85;
+  letter-spacing: 0.04em;
+  color: var(--color-ink);
+  background: var(--color-brand);
+  text-rendering: optimizeLegibility;
+}
+
+body.appear {
+  background: var(--color-paper-2);
 }
 
 a {
-  color: var(--ai);
+  color: inherit;
   text-decoration: none;
+}
+
+a:where(:hover, :focus-visible) {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 img {
   max-inline-size: 100%;
   block-size: auto;
+  vertical-align: bottom;
 }
 
-ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
+h1,
+h2,
+h3 {
+  line-height: 1.2;
 }
 
-h2.heading {
-  font-family: 'Alex Brush', cursive;
-  font-size: 3rem;
-  color: var(--kincha);
-  margin-block-end: 30px;
-  
-  @media (width <= 768px) {
-    font-size: 2rem;
-  }
-}
-
-section {
-  padding: 80px 20px;
-  
-  @media (width <= 768px) {
-    padding: 50px 20px;
-  }
+address {
+  font-style: normal;
 }

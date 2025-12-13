@@ -24,7 +24,7 @@
   text-align: center;
   padding: 40px;
   
-  & h2 {
+  h2 {
     font-size: clamp(2rem, 8vw, 4rem);
     margin-block-end: 30px;
   }
@@ -34,29 +34,29 @@
 .profile-content {
   max-inline-size: 600px;
   
-  & h2 {
+  h2 {
     font-size: 1.5rem;
     margin-block-end: 20px;
     
-    & span {
+    span {
       display: block;
       font-size: 2rem;
       margin-block-start: 10px;
     }
   }
   
-  & p {
+  p {
     margin-block-end: 20px;
     color: var(--hai);
   }
   
-  & dl {
-    & dt {
+  dl {
+    dt {
       font-weight: bold;
       margin-block-end: 10px;
     }
     
-    & dd {
+    dd {
       color: var(--hai);
       margin-block-end: 5px;
     }
@@ -108,11 +108,11 @@
   inset-block-start: 50%;
   transform: translateY(-50%);
   
-  & li {
+  li {
     margin-block-end: 15px;
   }
   
-  & a {
+  a {
     display: block;
     inline-size: 12px;
     block-size: 12px;

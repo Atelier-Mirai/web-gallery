@@ -28,7 +28,7 @@
     transform: translateY(-5px);
   }
   
-  & a {
+  a {
     display: block;
     color: var(--sumi);
   }

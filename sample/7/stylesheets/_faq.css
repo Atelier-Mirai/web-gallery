@@ -12,7 +12,7 @@
 }
 
 .accordion-list {
-  & li {
+  li {
     margin-block-end: 15px;
   }
 }

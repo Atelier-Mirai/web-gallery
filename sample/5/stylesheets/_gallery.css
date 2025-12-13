@@ -8,7 +8,7 @@
   margin-block-end: 40px;
   flex-wrap: wrap;
   
-  & button {
+  button {
     padding: 10px 25px;
     background: transparent;
     border: 1px solid var(--hai);
@@ -37,7 +37,7 @@
     display: none;
   }
   
-  & a {
+  a {
     display: block;
     position: relative;
   }
@@ -47,7 +47,7 @@
   aspect-ratio: 1;
   overflow: hidden;
   
-  & img {
+  img {
     inline-size: 100%;
     block-size: 100%;
     object-fit: cover;

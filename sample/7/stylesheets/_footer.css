@@ -27,7 +27,7 @@
   inset-inline-end: 20px;
   inset-block-end: 20px;
   
-  & a {
+  a {
     display: block;
     padding: 15px;
     background-color: var(--sumi);

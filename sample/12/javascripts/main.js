@@ -1,106 +1,139 @@
-/*=====================================================================
-  和風サイト（料亭） - メインスクリプト
-=====================================================================*/
-
 (() => {
   'use strict'
 
-  /* ローディング画面 */
+  const setPathLengths = svg => {
+    if (!svg) return
+
+    svg.querySelectorAll('path').forEach(path => {
+      const length = Math.ceil(path.getTotalLength())
+      path.style.setProperty('--path-length', String(length))
+    })
+  }
+
   const initSplash = () => {
     const splash = document.getElementById('splash')
     if (!splash) return
 
-    setTimeout(() => {
-      splash.style.opacity = '0'
+    setPathLengths(splash.querySelector('svg'))
+
+    window.setTimeout(() => {
+      splash.classList.add('is-hidden')
       document.body.classList.add('appear')
-      setTimeout(() => {
-        splash.style.display = 'none'
-        initSlider()
-        handleScrollAnimations()
-      }, 800)
-    }, 3500)
+    }, 3000)
   }
 
-  /* ナビゲーション */
-  const initNavigation = () => {
-    const toggle = document.querySelector('.menu-toggle')
-    const nav = document.getElementById('main-nav')
-    const links = nav?.querySelectorAll('a')
+  const initNavPopover = () => {
+    const toggle = document.querySelector('.nav-toggle')
+    const popover = document.getElementById('global-nav')
+    const tel = document.querySelector('[data-reserve-tel]')
 
-    if (!toggle || !nav) return
+    if (!toggle || !popover) return
 
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('is-active')
-      nav.classList.toggle('is-active')
-    })
+    const updateExpanded = () => {
+      const isOpen = popover.matches(':popover-open')
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false')
+      tel?.classList.toggle('is-active', isOpen)
+    }
 
-    links?.forEach(link => {
+    popover.addEventListener('toggle', updateExpanded)
+    updateExpanded()
+
+    popover.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        toggle.classList.remove('is-active')
-        nav.classList.remove('is-active')
+        popover.hidePopover?.()
       })
     })
   }
 
-  /* ヒーロースライダー */
-  const initSlider = () => {
-    const items = document.querySelectorAll('.slider-item')
-    if (items.length <= 1) return
+  const initHeroSlider = () => {
+    const hero = document.querySelector('[data-hero]')
+    if (!hero) return
 
-    let current = 0
-    items[0]?.classList.add('is-active')
+    const slides = Array.from(hero.querySelectorAll('.hero-slide'))
+    if (slides.length <= 1) return
 
-    setInterval(() => {
-      items[current].classList.remove('is-active')
-      current = (current + 1) % items.length
-      items[current].classList.add('is-active')
-    }, 5000)
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    let current = slides.findIndex(slide => slide.classList.contains('is-active'))
+    if (current < 0) current = 0
+
+    window.setInterval(() => {
+      slides[current]?.classList.remove('is-active')
+      current = (current + 1) % slides.length
+      slides[current]?.classList.add('is-active')
+    }, 3200)
   }
 
-  /* スクロールアニメーション */
-  const handleScrollAnimations = () => {
-    const triggers = document.querySelectorAll('.blur-in, .line-reveal, .svg-animate')
-    const windowH = window.innerHeight
+  const initParallax = () => {
+    const targets = Array.from(document.querySelectorAll('.menu-bg, .access-bg'))
+    if (targets.length === 0) return
 
-    triggers.forEach(el => {
-      const rect = el.getBoundingClientRect()
-      if (rect.top < windowH - 100) {
-        el.classList.add('is-visible')
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+
+    const speed = 0.18
+    let ticking = false
+
+    const update = () => {
+      for (const el of targets) {
+        const rect = el.getBoundingClientRect()
+        const maxShift = rect.height * 0.18
+        const raw = rect.top * speed
+        const clamped = Math.max(-maxShift, Math.min(maxShift, raw))
+        el.style.setProperty('--parallax-y', `${Math.round(clamped)}px`)
       }
-    })
+      ticking = false
+    }
+
+    const onScroll = () => {
+      if (ticking) return
+      ticking = true
+      window.requestAnimationFrame(update)
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', onScroll)
+    update()
   }
 
-  /* ページトップ */
-  const initPageTop = () => {
-    const btn = document.getElementById('page-top')
-    if (!btn) return
+  const initReveal = () => {
+    const targets = document.querySelectorAll('[data-reveal]')
+    if (targets.length === 0) return
 
-    btn.addEventListener('click', (e) => {
-      e.preventDefault()
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return
+        entry.target.classList.add('is-visible')
+        obs.unobserve(entry.target)
+      })
+    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.25 })
+
+    targets.forEach(el => observer.observe(el))
+  }
+
+  const initPageTop = () => {
+    const button = document.querySelector('[data-page-top]')
+    if (!button) return
+
+    const toggleVisibility = () => {
+      button.classList.toggle('is-visible', window.scrollY > 200)
+    }
+
+    window.addEventListener('scroll', toggleVisibility, { passive: true })
+    toggleVisibility()
+
+    button.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     })
   }
 
-  /* スムーススクロール */
-  const initSmoothScroll = () => {
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href')
-        if (!href || href === '#') return
-
-        e.preventDefault()
-        const target = document.querySelector(href)
-        target?.scrollIntoView({ behavior: 'smooth' })
-      })
-    })
-  }
-
-  /* 初期化 */
   window.addEventListener('load', () => {
     initSplash()
-    initNavigation()
+    initNavPopover()
+    initHeroSlider()
+    initParallax()
+    initReveal()
     initPageTop()
-    initSmoothScroll()
-    window.addEventListener('scroll', handleScrollAnimations, { passive: true })
+
+    setPathLengths(document.querySelector('.lead-mark svg'))
   })
 })()

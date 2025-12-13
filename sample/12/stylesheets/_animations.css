@@ -1,55 +1,138 @@
-/*=====================================================================
-  アニメーション
-=====================================================================*/
-/* ブラーイン */
-.blur-in {
-  opacity: 0;
-  filter: blur(10px);
-  transition: all 1s;
-  
-  &.is-visible {
-    opacity: 1;
-    filter: blur(0);
+#splash {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  background: var(--color-brand);
+  display: grid;
+  place-items: center;
+  transition:
+    opacity 0.6s ease,
+    visibility 0.6s ease;
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
-/* ラインイン（画像表示） */
-.line-reveal {
-  position: relative;
-  overflow: hidden;
-  
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-color: var(--kuriiro);
-    transform: scaleX(1);
-    transform-origin: right;
-    transition: transform 0.8s 0.3s;
-    z-index: 1;
+.splash-logo svg {
+  inline-size: 110px;
+  block-size: auto;
+}
+
+.splash-logo path {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-dasharray: var(--path-length);
+  stroke-dashoffset: var(--path-length);
+  animation: splash-draw 2.4s ease forwards;
+}
+
+@keyframes splash-draw {
+  to {
+    stroke-dashoffset: 0;
   }
-  
-  &.is-visible::before {
+}
+
+.splash-transition {
+  display: none;
+}
+
+body.appear .splash-transition {
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: 19;
+  background: var(--color-brand);
+  transform: scaleX(0);
+  transform-origin: right;
+  animation: splash-swipe 1.2s ease-in-out forwards;
+}
+
+@keyframes splash-swipe {
+  0% {
+    transform-origin: right;
     transform: scaleX(0);
   }
-  
-  & img {
-    transform: scale(1.2);
-    transition: transform 0.8s 0.5s;
+
+  50% {
+    transform-origin: right;
+    transform: scaleX(1);
   }
-  
-  &.is-visible img {
-    transform: scale(1);
+
+  50.001% {
+    transform-origin: left;
+  }
+
+  100% {
+    transform-origin: left;
+    transform: scaleX(0);
   }
 }
 
-/* SVGアニメーション */
-.svg-animate path {
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
-  transition: stroke-dashoffset 2s ease;
+[data-reveal] {
+  opacity: 0;
+  transition:
+    opacity 0.8s ease,
+    filter 0.8s ease,
+    transform 0.8s ease;
 }
 
-.svg-animate.is-visible path {
-  stroke-dashoffset: 0;
+[data-reveal="blur"] {
+  filter: blur(10px);
+  transform: translateY(18px);
+}
+
+[data-reveal="line"] {
+  transform: translateY(12px);
+}
+
+[data-reveal].is-visible {
+  opacity: 1;
+  filter: blur(0);
+  transform: translateY(0);
+}
+
+.menu-item[data-reveal="line"],
+.reserve[data-reveal="line"] {
+  position: relative;
+}
+
+.menu-item[data-reveal="line"]::before,
+.menu-item[data-reveal="line"]::after,
+.reserve[data-reveal="line"]::before,
+.reserve[data-reveal="line"]::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--color-brand);
+  border-radius: var(--radius-2);
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+  transition:
+    transform 0.9s ease,
+    opacity 0.9s ease;
+}
+
+.menu-item.is-visible::before,
+.reserve.is-visible::before {
+  transform: scaleX(1);
+  opacity: 0.2;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto;
+  }
+
+  .hero-slide {
+    transition: none;
+    transform: none;
+  }
+
+  [data-reveal] {
+    transition: none;
+  }
 }

@@ -15,11 +15,11 @@
   position: relative;
   inset-block-start: 1px;
 
-  & li {
+  li {
     flex: 1;
   }
 
-  & a {
+  a {
     display: block;
     padding: 15px 20px;
     text-align: center;
@@ -32,7 +32,7 @@
     }
   }
 
-  & li.is-active a {
+  li.is-active a {
     background-color: var(--sumi);
     border-color: var(--hai);
   }

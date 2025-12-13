@@ -23,18 +23,18 @@
 }
 
 .vision-content {
-  & h2 {
+  h2 {
     margin-block-end: 30px;
   }
   
-  & .lead {
+  .lead {
     font-size: 1.3rem;
     font-weight: bold;
     margin-block-end: 30px;
     line-height: 2;
   }
   
-  & p {
+  p {
     margin-block-end: 20px;
     color: var(--hai);
   }

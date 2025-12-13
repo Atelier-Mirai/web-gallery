@@ -10,7 +10,7 @@
   background: none;
   border: none;
   
-  & span {
+  span {
     display: block;
     position: absolute;
     inset-inline: 0;
@@ -56,7 +56,7 @@
 .nav-list {
   text-align: center;
   
-  & li {
+  li {
     margin-block-end: 30px;
     opacity: 0;
     transform: translateY(20px);
@@ -71,7 +71,7 @@
     }
   }
   
-  & a {
+  a {
     font-size: 2rem;
     letter-spacing: 0.1em;
     transition: color 0.3s;
@@ -81,7 +81,7 @@
     }
   }
   
-  & .current a {
+  .current a {
     color: var(--aoi);
   }
 }

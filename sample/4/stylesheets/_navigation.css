@@ -12,7 +12,7 @@
   background: transparent;
   border: none;
   
-  & span {
+  span {
     display: block;
     position: absolute;
     inset-inline-start: 10px;
@@ -61,11 +61,11 @@
 .nav-list {
   text-align: center;
   
-  & li {
+  li {
     margin-block-end: 20px;
   }
   
-  & a {
+  a {
     display: block;
     padding: 15px 40px;
     color: var(--shiro);

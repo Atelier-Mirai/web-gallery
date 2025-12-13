@@ -7,12 +7,12 @@
 }
 
 .about-list {
-  & li {
+  li {
     padding-block: 20px;
     border-block-end: 1px solid var(--sumi-10);
   }
   
-  & dl {
+  dl {
     display: grid;
     grid-template-columns: 150px 1fr;
     gap: 20px;
@@ -23,11 +23,11 @@
     }
   }
   
-  & dt {
+  dt {
     font-weight: bold;
   }
   
-  & dd {
+  dd {
     color: var(--hai);
   }
 }

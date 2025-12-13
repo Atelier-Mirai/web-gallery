@@ -16,7 +16,7 @@
   display: flex;
   gap: 40px;
   
-  & a {
+  a {
     font-size: 0.9rem;
     letter-spacing: 0.1em;
     transition: opacity 0.3s;

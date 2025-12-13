@@ -12,7 +12,7 @@
   position: absolute;
   inset: 0;
   
-  & img {
+  img {
     position: absolute;
     inset: 0;
     inline-size: 100%;
@@ -41,12 +41,12 @@
   text-align: center;
   color: var(--shiro);
   
-  & h1 {
+  h1 {
     font-size: clamp(3rem, 10vw, 6rem);
     margin-block-end: 10px;
   }
   
-  & p {
+  p {
     font-size: 1.2rem;
     letter-spacing: 0.3em;
   }
@@ -60,7 +60,7 @@
   display: flex;
   gap: 20px;
   
-  & img {
+  img {
     inline-size: 24px;
     opacity: 0.8;
     transition: opacity 0.3s;

@@ -53,18 +53,18 @@
   text-align: center;
   overflow: hidden;
 
-  & a {
+  a {
     display: block;
     position: relative;
   }
 
-  & figure {
+  figure {
     position: relative;
     display: block;
     overflow: hidden;
   }
 
-  & img {
+  img {
     inline-size: auto;
     block-size: 32vh;
     object-fit: cover;
@@ -76,7 +76,7 @@
   }
 
   /* 日付オーバーレイ */
-  & figure time {
+  figure time {
     position: absolute;
     inset-block-end: 0;
     inset-inline-start: 0;
@@ -123,12 +123,12 @@
 }
 
 .blog-card a:hover {
-  & figure::before {
+  figure::before {
     opacity: 1;
     transform: translateY(0);
   }
 
-  & .overlay {
+  .overlay {
     opacity: 1;
   }
 }

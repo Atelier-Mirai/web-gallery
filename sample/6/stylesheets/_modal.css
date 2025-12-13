@@ -57,7 +57,7 @@
   position: relative;
   overflow: hidden;
   
-  & img {
+  img {
     inline-size: 100%;
     block-size: auto;
     transition: transform 0.3s;

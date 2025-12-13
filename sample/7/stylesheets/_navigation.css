@@ -39,11 +39,11 @@
 .nav-list {
   text-align: center;
   
-  & li {
+  li {
     margin-block-end: 20px;
   }
   
-  & a {
+  a {
     display: block;
     padding: 15px 40px;
     color: var(--shiro);

@@ -34,7 +34,7 @@ h2 {
   text-align: center;
   margin-block-end: 40px;
   
-  & span {
+  span {
     display: block;
     font-size: 0.9rem;
     color: var(--sora);

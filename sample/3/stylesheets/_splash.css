@@ -13,7 +13,7 @@
 }
 
 .splash-logo {
-  & img {
+  img {
     inline-size: 80px;
     margin-block-end: 10px;
   }

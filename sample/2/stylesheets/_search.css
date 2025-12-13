@@ -44,7 +44,7 @@
   background: transparent;
   border: none;
 
-  & span {
+  span {
     position: absolute;
     inset-inline-start: 50%;
     inset-block-start: 50%;

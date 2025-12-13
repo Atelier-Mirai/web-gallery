@@ -15,7 +15,7 @@
   @media (width <= 500px) {
     padding-inline-end: 10%;
 
-    & br {
+    br {
       display: none;
     }
   }
@@ -65,12 +65,12 @@
 
 /* サービスカード */
 .service-card {
-  & h3 {
+  h3 {
     font-size: 1.5rem;
     margin-block-end: 30px;
   }
 
-  & p {
+  p {
     margin-block-end: 30px;
   }
 

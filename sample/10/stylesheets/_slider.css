@@ -16,7 +16,7 @@
   flex: 0 0 300px;
   margin-inline-end: 20px;
   
-  & a {
+  a {
     display: block;
     position: relative;
     overflow: hidden;
@@ -27,7 +27,7 @@
     }
   }
   
-  & img {
+  img {
     inline-size: 100%;
     aspect-ratio: 1;
     object-fit: cover;

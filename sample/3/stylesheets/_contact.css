@@ -12,17 +12,17 @@
   max-inline-size: 600px;
   margin-inline: auto;
   
-  & h2 {
+  h2 {
     font-size: 1.8rem;
     margin-block-end: 20px;
     color: var(--shiro);
     
-    & span {
+    span {
       color: var(--kiiro);
     }
   }
   
-  & p {
+  p {
     margin-block-end: 30px;
   }
 }

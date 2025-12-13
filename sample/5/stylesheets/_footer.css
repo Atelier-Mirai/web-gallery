@@ -20,7 +20,7 @@
   letter-spacing: 0.1em;
   cursor: pointer;
   
-  & a {
+  a {
     display: block;
     padding: 10px;
     transition: opacity 0.3s;

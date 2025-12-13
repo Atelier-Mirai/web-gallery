@@ -57,7 +57,7 @@
   inset-inline-start: 50%;
 
   /* Scroll テキスト */
-  & span {
+  span {
     position: absolute;
     inset-inline-start: 10px;
     inset-block-end: 10px;

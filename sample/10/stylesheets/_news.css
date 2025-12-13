@@ -2,7 +2,7 @@
   ニュース（アコーディオン）
 =====================================================================*/
 #news {
-  & > h2 {
+  > h2 {
     font-size: 1.2rem;
     padding-block-end: 15px;
     border-block-end: 2px solid var(--wakakusa);
@@ -11,7 +11,7 @@
 }
 
 .accordion-list {
-  & li {
+  li {
     margin-block-end: 10px;
   }
 }

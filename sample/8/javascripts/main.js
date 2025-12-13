@@ -1,95 +1,188 @@
-/*=====================================================================
-  堅実的な企業サイト - メインスクリプト
-=====================================================================*/
-
 (() => {
   'use strict'
 
-  /* ローディング画面 */
   const initSplash = () => {
     const splash = document.getElementById('splash')
     if (!splash) return
 
-    setTimeout(() => {
-      splash.style.opacity = '0'
+    window.setTimeout(() => {
+      splash.classList.add('is-hidden')
       document.body.classList.add('appear')
-      setTimeout(() => {
-        splash.style.display = 'none'
-        document.querySelector('#header')?.classList.add('is-visible')
-        handleScrollAnimations()
-      }, 600)
     }, 1500)
   }
 
-  /* ナビゲーション */
-  const initNavigation = () => {
-    const toggle = document.querySelector('.menu-toggle')
-    const nav = document.getElementById('global-nav')
-    const links = nav?.querySelectorAll('a')
+  const initNavPopover = () => {
+    const toggle = document.querySelector('.nav-toggle')
+    const popover = document.getElementById('global-nav')
+    if (!toggle || !popover) return
 
-    if (!toggle || !nav) return
+    const updateExpanded = () => {
+      const isOpen = popover.matches(':popover-open')
+      toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false')
+    }
 
-    toggle.addEventListener('click', () => {
-      toggle.classList.toggle('is-active')
-      nav.classList.toggle('is-active')
-    })
+    popover.addEventListener('toggle', updateExpanded)
+    updateExpanded()
 
-    links?.forEach(link => {
+    popover.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
-        toggle.classList.remove('is-active')
-        nav.classList.remove('is-active')
+        popover.hidePopover?.()
       })
     })
   }
 
-  /* ヒーロースライダー */
-  const initHeroSlider = () => {
-    const slider = document.querySelector('.slider-area')
-    if (!slider) return
+  const initHeaderAutoHide = () => {
+    const header = document.querySelector('[data-header]')
+    if (!header) return
 
-    const images = slider.querySelectorAll('img')
-    if (images.length <= 1) return
+    let lastY = window.scrollY
 
-    let current = 0
-    images[0]?.classList.add('is-active')
+    const onScroll = () => {
+      const currentY = window.scrollY
+      const delta = currentY - lastY
 
-    setInterval(() => {
-      images[current].classList.remove('is-active')
-      current = (current + 1) % images.length
-      images[current].classList.add('is-active')
-    }, 4000)
-  }
-
-  /* スクロールアニメーション */
-  const handleScrollAnimations = () => {
-    const triggers = document.querySelectorAll('.fade-up, .fade-left, .fade-right, .down-move')
-    const windowH = window.innerHeight
-
-    triggers.forEach(el => {
-      const rect = el.getBoundingClientRect()
-      if (rect.top < windowH - 50) {
-        el.classList.add('is-visible')
+      if (currentY < 80) {
+        header.classList.remove('is-hidden')
+        lastY = currentY
+        return
       }
-    })
+
+      if (delta > 10) {
+        header.classList.add('is-hidden')
+      }
+
+      if (delta < -10) {
+        header.classList.remove('is-hidden')
+      }
+
+      lastY = currentY
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true })
   }
 
-  /* ページトップ */
-  const initPageTop = () => {
-    const btn = document.getElementById('page-top')
-    if (!btn) return
+  const loadHeroSlide = slide => {
+    if (!slide || slide.dataset.loaded === 'true') return
 
-    btn.addEventListener('click', (e) => {
-      e.preventDefault()
+    const source = slide.querySelector('source[data-srcset]')
+    if (source?.dataset.srcset) {
+      source.srcset = source.dataset.srcset
+      source.removeAttribute('data-srcset')
+    }
+
+    const img = slide.querySelector('img[data-src]')
+    if (img?.dataset.src) {
+      img.src = img.dataset.src
+      img.removeAttribute('data-src')
+    }
+
+    slide.dataset.loaded = 'true'
+  }
+
+  const initHeroSlider = () => {
+    const hero = document.querySelector('[data-hero]')
+    if (!hero) return
+
+    const slides = Array.from(hero.querySelectorAll('.hero-slide'))
+    if (slides.length <= 1) return
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      slides.forEach(loadHeroSlide)
+      return
+    }
+
+    let current = slides.findIndex(slide => slide.classList.contains('is-active'))
+    if (current < 0) current = 0
+
+    window.setInterval(() => {
+      slides[current]?.classList.remove('is-active')
+      current = (current + 1) % slides.length
+      const next = slides[current]
+      loadHeroSlide(next)
+      next.classList.add('is-active')
+    }, 9000)
+  }
+
+  const initReveal = () => {
+    const targets = document.querySelectorAll('[data-reveal]')
+    if (targets.length === 0) return
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return
+        entry.target.classList.add('is-visible')
+        obs.unobserve(entry.target)
+      })
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.2 })
+
+    targets.forEach(target => observer.observe(target))
+  }
+
+  const initServiceRandomReveal = () => {
+    const grid = document.querySelector('.service-grid')
+    if (!grid) return
+
+    const links = Array.from(grid.querySelectorAll('.service-link'))
+    if (links.length === 0) return
+
+    const shuffled = [...links].sort(() => Math.random() - 0.5)
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return
+
+        shuffled.forEach((link, i) => {
+          window.setTimeout(() => {
+            link.classList.add('is-visible')
+          }, i * 120)
+        })
+
+        observer.disconnect()
+      })
+    }, { threshold: 0.3 })
+
+    observer.observe(grid)
+  }
+
+  const initTimelineReveal = () => {
+    const items = document.querySelectorAll('.timeline-item')
+    if (items.length === 0) return
+
+    const observer = new IntersectionObserver((entries, obs) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return
+        entry.target.classList.add('is-visible')
+        obs.unobserve(entry.target)
+      })
+    }, { threshold: 0.4 })
+
+    items.forEach(item => observer.observe(item))
+  }
+
+  const initPageTop = () => {
+    const button = document.querySelector('[data-page-top]')
+    if (!button) return
+
+    const toggleVisibility = () => {
+      button.classList.toggle('is-visible', window.scrollY > 500)
+    }
+
+    window.addEventListener('scroll', toggleVisibility, { passive: true })
+    toggleVisibility()
+
+    button.addEventListener('click', () => {
       window.scrollTo({ top: 0, behavior: 'smooth' })
     })
   }
 
-  /* 初期化 */
   window.addEventListener('load', () => {
     initSplash()
-    initNavigation()
+    initNavPopover()
+    initHeaderAutoHide()
     initHeroSlider()
+    initReveal()
+    initServiceRandomReveal()
+    initTimelineReveal()
     initPageTop()
-    window.addEventListener('scroll', handleScrollAnimations, { passive: true })
   })
 })()

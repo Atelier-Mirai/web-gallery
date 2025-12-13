@@ -19,7 +19,7 @@
 #header h1 {
   inline-size: 150px;
   
-  & img {
+  img {
     inline-size: 100%;
   }
   
@@ -39,7 +39,7 @@
   letter-spacing: 0.1em;
   text-shadow: 0 0 40px var(--aoi);
   
-  & span {
+  span {
     display: inline-block;
   }
 }

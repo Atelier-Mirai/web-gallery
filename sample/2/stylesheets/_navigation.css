@@ -16,14 +16,14 @@
   border: none;
   padding: 0;
 
-  & .toggle-inner {
+  .toggle-inner {
     position: relative;
     display: block;
     inline-size: 100%;
     block-size: 100%;
   }
 
-  & span {
+  span {
     display: block;
     position: absolute;
     inset-inline-start: 10px;
@@ -85,13 +85,13 @@
     display: block;
   }
 
-  & ul {
+  ul {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
 
-  & a {
+  a {
     display: block;
     padding: 20px 35px;
     color: var(--shironezumi);
@@ -108,7 +108,7 @@
 .has-child {
   position: relative;
 
-  & > ul {
+  > ul {
     display: none;
     padding-inline-start: 20px;
   }

@@ -21,29 +21,29 @@
 }
 
 .greeting-image {
-  & img {
+  img {
     inline-size: 100%;
     block-size: auto;
   }
 }
 
 .greeting-content {
-  & h2 {
+  h2 {
     margin-block-end: 30px;
   }
   
-  & .lead {
+  .lead {
     font-size: 1.3rem;
     margin-block-end: 20px;
     color: var(--ai);
   }
   
-  & p {
+  p {
     margin-block-end: 15px;
     color: var(--hai);
   }
   
-  & .signature {
+  .signature {
     text-align: end;
     margin-block-start: 30px;
   }

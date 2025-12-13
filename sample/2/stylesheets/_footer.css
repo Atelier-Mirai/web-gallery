@@ -48,7 +48,7 @@
   flex-wrap: wrap;
   gap: 10px;
 
-  & dt::after {
+  dt::after {
     content: ":";
     padding-inline: 10px;
   }

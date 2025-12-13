@@ -15,7 +15,7 @@
   font-size: 3rem;
   color: var(--shiro);
   
-  & span {
+  span {
     display: inline-block;
     opacity: 0;
     animation: letter-fade 0.5s forwards;

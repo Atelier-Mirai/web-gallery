@@ -2,7 +2,7 @@
   新着アイテム（サムネイル切替ギャラリー）
 =====================================================================*/
 #new-items {
-  & h2 {
+  h2 {
     text-align: center;
     
     &::before {
@@ -17,7 +17,7 @@
   margin-block-end: 20px;
   overflow: hidden;
   
-  & img {
+  img {
     position: absolute;
     inset: 0;
     inline-size: 100%;
@@ -50,7 +50,7 @@
     border-color: var(--wakakusa);
   }
   
-  & img {
+  img {
     inline-size: 100%;
     aspect-ratio: 1;
     object-fit: cover;

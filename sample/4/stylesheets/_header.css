@@ -27,7 +27,7 @@
   font-size: 1.5rem;
   letter-spacing: 0.1em;
   
-  & a {
+  a {
     color: var(--shiro);
   }
 }
@@ -46,16 +46,16 @@
   display: flex;
   gap: 20px;
   
-  & dl {
+  dl {
     display: flex;
     gap: 10px;
   }
   
-  & dt {
+  dt {
     color: var(--ai);
   }
   
-  & a {
+  a {
     color: var(--shiro);
   }
 }

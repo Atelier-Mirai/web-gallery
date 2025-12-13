@@ -18,7 +18,7 @@
   text-align: center;
   padding: 20px;
 
-  & h2 {
+  h2 {
     margin-block-end: 5px;
     font-size: 1.5rem;
 
@@ -27,7 +27,7 @@
     }
   }
 
-  & p {
+  p {
     @media (width <= 690px) {
       text-align: start;
     }
@@ -38,7 +38,7 @@
   display: grid;
   grid-template-rows: 1fr 1fr;
 
-  & p {
+  p {
     text-align: center;
 
     &:last-child {
@@ -46,7 +46,7 @@
     }
   }
 
-  & a {
+  a {
     display: block;
     padding: 20px;
     transition: background-color 0.3s;
@@ -56,7 +56,7 @@
     }
   }
 
-  & br {
+  br {
     display: none;
 
     @media (width <= 690px) {

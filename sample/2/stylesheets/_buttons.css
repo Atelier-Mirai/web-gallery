@@ -42,7 +42,7 @@
   }
 
   /* 左右の線 */
-  & span {
+  span {
     position: relative;
     display: block;
 

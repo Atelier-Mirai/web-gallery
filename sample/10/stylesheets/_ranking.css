@@ -2,7 +2,7 @@
   ランキング
 =====================================================================*/
 #ranking {
-  & h2 {
+  h2 {
     text-align: center;
     
     &::before {
@@ -54,7 +54,7 @@
     background-color: var(--matsubairo);
   }
   
-  & a {
+  a {
     display: block;
     overflow: hidden;
     border-radius: 8px;
@@ -65,7 +65,7 @@
     }
   }
   
-  & img {
+  img {
     inline-size: 100%;
     aspect-ratio: 1;
     object-fit: cover;

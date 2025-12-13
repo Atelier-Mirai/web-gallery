@@ -5,7 +5,7 @@
   background: url("../images/footer-bg.webp") no-repeat center / cover;
   color: var(--shiro);
   
-  & .inner {
+  .inner {
     background-color: rgb(0 0 0 / 60%);
   }
 }
@@ -22,33 +22,33 @@
 }
 
 .school-info {
-  & dt {
+  dt {
     font-size: 1.2rem;
     margin-block-end: 15px;
     
-    & span {
+    span {
       display: block;
       font-size: 1.5rem;
       color: var(--kiiro);
     }
   }
   
-  & li {
+  li {
     margin-block-end: 10px;
   }
   
-  & dl {
+  dl {
     display: flex;
     gap: 10px;
   }
   
-  & a {
+  a {
     color: var(--shiro);
   }
 }
 
 .footer-nav {
-  & ul {
+  ul {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
@@ -58,7 +58,7 @@
     }
   }
   
-  & a {
+  a {
     color: var(--shiro);
     transition: opacity 0.3s;
     

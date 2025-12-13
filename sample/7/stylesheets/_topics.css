@@ -8,7 +8,7 @@
   padding: 20px 40px;
   border-block: 1px solid var(--sumi-10);
   
-  & h2 {
+  h2 {
     font-size: 1rem;
     margin: 0;
     white-space: nowrap;

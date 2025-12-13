@@ -49,13 +49,13 @@
 .fluid-content {
   padding: 40px;
   
-  & h2 {
+  h2 {
     font-size: clamp(1.5rem, 4vw, 2.5rem);
     line-height: 1.5;
     margin-block-end: 30px;
   }
   
-  & p {
+  p {
     color: var(--hai);
     line-height: 2;
   }

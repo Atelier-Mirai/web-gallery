@@ -58,7 +58,7 @@
   block-size: 100dvh;
   overflow: hidden;
 
-  & img {
+  img {
     position: absolute;
     inset: 0;
     inline-size: 100%;
@@ -105,18 +105,18 @@
   inset-block-end: 2%;
   color: var(--hai);
 
-  & dt,
-  & dd,
-  & ul,
-  & li {
+  dt,
+  dd,
+  ul,
+  li {
     display: inline-block;
   }
 
-  & dt {
+  dt {
     text-transform: uppercase;
   }
 
-  & li {
+  li {
     margin-inline: 10px;
 
     @media (width <= 960px) {
@@ -124,7 +124,7 @@
     }
   }
 
-  & img {
+  img {
     inline-size: 20px;
   }
 
@@ -140,7 +140,7 @@
   inset-inline-end: 20px;
   inset-block-end: 0;
 
-  & span {
+  span {
     position: absolute;
     inset-inline-start: -23px;
     inset-block-start: -31px;

@@ -17,7 +17,7 @@
     z-index: 1;
   }
   
-  & span {
+  span {
     display: inline-block;
     opacity: 0;
   }
@@ -27,7 +27,7 @@
       animation: bg-extend 0.8s forwards;
     }
     
-    & span {
+    span {
       animation: text-appear 0.1s 0.4s forwards;
     }
   }

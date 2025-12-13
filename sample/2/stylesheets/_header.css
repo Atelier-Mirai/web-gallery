@@ -37,7 +37,7 @@
   line-height: 1;
   white-space: nowrap;
 
-  & a {
+  a {
     color: var(--shironezumi);
   }
 }
